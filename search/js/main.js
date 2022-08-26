@@ -22,7 +22,7 @@ $(function () {
             })
         },
         blur: function () {
-            $(this).val("你寄吧想搜啥？");
+            $(this).val("这里怎么看都不像搜索框吧");
         }
     })
 
