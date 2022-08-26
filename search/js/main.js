@@ -34,7 +34,7 @@ $(function () {
         if (cinHref == null) {
 
         } else {
-            if (cinHref.substring(0, 7) !== "http://") {
+            if (cinHref.substring(0, 7) !== "http://"&& cinHref.substring(0, 8) !== "https://") {
                 cinHref = "http://" + cinHref;
             }
             var cinName = prompt("你想要让这个网址叫什么名字？");
