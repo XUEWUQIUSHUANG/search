@@ -35,7 +35,7 @@ $(function () {
 
         } else {
             if (cinHref.substring(0, 7) !== "http://"&& cinHref.substring(0, 8) !== "https://") {
-                cinHref = "http://" + cinHref;
+                cinHref = "https://" + cinHref;
             }
             var cinName = prompt("你想要让这个网址叫什么名字？");
             if (cinName == null) {
