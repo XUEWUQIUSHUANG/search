@@ -163,6 +163,21 @@ ul>li div .ADD {
     cursor: default;
 }
 
+.ask>.question3 {
+    width: 120px;
+    height: 30px;
+    border-radius: 3px;
+    background-color: white;
+    opacity: .8;
+    text-align: center;
+    line-height: 30px;
+    cursor: default;
+}
+
+.ask>.question3:hover {
+    background-color: gray;
+}
+
 .ask>.question2:hover {
     background-color: gray;
 }
