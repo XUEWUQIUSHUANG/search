@@ -87,6 +87,19 @@ $(function () {
                     $(".modal-framework").hide();
                 })
             })
+            // 修改图片
+            $(this).siblings(".ask").children(".question3").on("click", function () {
+                var loc = prompt("请输入图片的地址");
+                console.log(loc);
+                if (loc === null || loc === "") {
+                    data[index].ICO = data[index].ahref + "favicon.ico";
+                } else {
+                    data[index].ICO = loc;
+                }
+                saveDeta(data);
+                load();
+                loop();
+            })
         })
     }
 
@@ -111,7 +124,7 @@ $(function () {
         var data = getData();
         $("ul>li:first").siblings().remove();
         $.each(data, function (index, element) {
-            var a = $("<li><a href=" + element.ahref + " target=_blank><div><img src=" + element.ahref + "favicon.ico></div><span class=Ename>" + element.name + "</span></a><p id=" + index + " class=icon-circleci></p><div class=ask><div class=question1>修改快捷方式</div><div class=question2>移除</div></div></li>");
+            var a = $("<li><a href=" + element.ahref + " target=_blank><div><img src=" + element.ICO + "></div><span class=Ename>" + element.name + "</span></a><p id=" + index + " class=icon-circleci></p><div class=ask><div class=question1>修改快捷方式</div><div class=question2>移除</div><div class=question3>更改图标</div></div></li>");
             $('ul').append(a);
         })
         $("li").on({
