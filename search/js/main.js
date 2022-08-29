@@ -43,7 +43,8 @@ $(function () {
             } else {
                 var position = {
                     name: cinName,
-                    ahref: cinHref
+                    ahref: cinHref,
+                    ICO: cinHref + "favicon.ico"
                 };
                 local.push(position);
                 saveDeta(local);
