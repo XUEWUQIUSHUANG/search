@@ -82,6 +82,7 @@ $(function () {
                 $(".modal-confirm").on("click", function () {
                     data[index].name = $(".modal-change-name").val();
                     data[index].ahref = $(".modal-change-href").val();
+                    data[index].ICO = $(".modal-change-href").val() + "favicon.ico";
                     saveDeta(data);
                     load();
                     loop();
