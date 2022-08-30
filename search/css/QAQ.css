@@ -68,6 +68,8 @@ a {
     text-align: center;
     height: 40px;
     width: 470px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .ulBox {
