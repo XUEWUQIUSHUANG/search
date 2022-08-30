@@ -13,6 +13,8 @@ $(function () {
                     if ($(this).val() !== "") {
                         var a = document.createElement("a");
                         a.href = "https://www.baidu.com/s?wd=" + $(this).val();
+                        $(this).val("");
+                        $(this).trigger("blur");
                         a.target = "_blank";
                         var b = document.body;
                         b.append(a);
