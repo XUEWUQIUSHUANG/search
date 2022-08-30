@@ -7,7 +7,7 @@ $(function () {
     // 搜索框聚焦
     $("#AU").on({
         focus: function () {
-            $(this).val(null);
+            $(this).prop("placeholder", "");
             $(this).on("keydown", function (e) {
                 if (e.keyCode === 13) {
                     if ($(this).val() !== "") {
@@ -22,7 +22,10 @@ $(function () {
             })
         },
         blur: function () {
-            $(this).val("这里怎么看都不像搜索框吧");
+            if ($(this).val == false) {
+            } else {
+                $(this).prop("placeholder", "这里怎么看都不像搜索框吧");
+            }
         }
     })
 
