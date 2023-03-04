@@ -1,5 +1,9 @@
 $(function () {
-
+let a = Date.now()
+    now = prompt(a);
+    if (now == a) {
+        $(".all").show();
+    }
     // 打开页面时立即加载一次
     load();
     loop();
