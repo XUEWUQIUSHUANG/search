@@ -80,6 +80,11 @@ a {
     overflow: auto;
 }
 
+.ulBox::-webkit-scrollbar {
+    display: none;
+}
+
+
 ul>li {
     position: relative;
     float: left;
