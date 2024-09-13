@@ -16,7 +16,7 @@ let a = Date.now()
                 if (e.keyCode === 13) {
                     if ($(this).val() !== "") {
                         var a = document.createElement("a");
-                        a.href = "httpshttps://cn.bing.com/search?q=" + $(this).val();
+                        a.href = "https://cn.bing.com/search?q=" + $(this).val();
                         $(this).val("");
                         $(this).trigger("blur");
                         a.target = "_blank";
