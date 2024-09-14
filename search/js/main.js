@@ -1,8 +1,30 @@
 $(function () {
-// let a = Date.now()
-//     now = prompt(a);
-//     if (now == a) {
-        $(".all").show();
+    // 让网址列表可以拖动排序
+    $("ul").sortable({
+        update: function (event, ui) {
+            var sortedIDs = $(this).sortable("toArray", { attribute: "id" });
+            var data = getData();
+            var newData = [];
+
+            // 根据新的顺序重排数据
+            $.each(sortedIDs, function (index, id) {
+                if (data[id]) {
+                    newData.push(data[id]);
+                }
+            });
+            // 保存新的顺序
+            saveDeta(newData);
+            load();
+        }
+    });
+
+    // 启用拖动功能
+    $(".draggable").draggable();
+
+    // let a = Date.now()
+    // now = prompt(a);
+    // if (now == a) {
+    $(".all").show();
     // }
     // 打开页面时立即加载一次
     load();
@@ -43,7 +65,7 @@ $(function () {
         if (cinHref == null) {
 
         } else {
-            if (cinHref.substring(0, 7) !== "http://"&& cinHref.substring(0, 8) !== "https://") {
+            if (cinHref.substring(0, 7) !== "http://" && cinHref.substring(0, 8) !== "https://") {
                 cinHref = "https://" + cinHref;
             }
             var cinName = prompt("你想要让这个网址叫什么名字？");
@@ -135,7 +157,7 @@ $(function () {
         var data = getData();
         $("ul>li:first").siblings().remove();
         $.each(data, function (index, element) {
-            var a = $("<li><a href=" + element.ahref + " target=_blank><div><img src=" + element.ICO + "></div><span class=Ename>" + element.name + "</span></a><p id=" + index + " class=icon-circleci></p><div class=ask><div class=question1>修改快捷方式</div><div class=question2>移除</div><div class=question3>更改图标</div></div></li>");
+            var a = $("<li id='" + index + "'><a href=" + element.ahref + " target=_blank><div><img src=" + element.ICO + "></div><span class=Ename>" + element.name + "</span></a><p id=" + index + " class=icon-circleci></p><div class=ask><div class=question1>修改快捷方式</div><div class=question2>移除</div><div class=question3>更改图标</div></div></li>");
             $('ul').append(a);
         })
         $("li").on({
@@ -147,5 +169,4 @@ $(function () {
             }
         })
     }
-
-})
+});
