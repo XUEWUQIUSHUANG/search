@@ -169,4 +169,39 @@ $(function () {
             }
         })
     }
+
+    let timeout;
+
+    $(".sleeping").on("click", function () {
+        $(".sleeping").hide();
+        $(".all").show();
+        clearTimeout(timeout);
+        timeout = setTimeout(function () {
+
+            $(".all").hide();
+            $(".sleeping").show();
+
+        }, 60000);
+    })
+
+    $(".all").on("click", function () {
+        clearTimeout(timeout);
+        timeout = setTimeout(function () {
+
+            $(".all").hide();
+            $(".sleeping").show();
+
+        }, 60000);
+    })
+
+    // 设置定时器
+    timeout = setTimeout(function () {
+
+        $(".all").hide();
+        $(".sleeping").show();
+
+    }, 60000);
 });
+
+
+
